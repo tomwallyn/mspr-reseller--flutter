@@ -1,0 +1,4 @@
+{
+  "BACKEND_URL": "http://localhost:8888/doli/",
+  "BACKEND_KEY":"NO_KEY"
+}

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "902088477645",
+    "project_id": "mspr-2023",
+    "storage_bucket": "mspr-2023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902088477645:android:b12cc6ca959497d2aa9284",
+        "android_client_info": {
+          "package_name": "com.epsi.mspr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902088477645-lihb9ein7ga52h4c18ft6jvqqpj922k2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBL9t5niUvDnX-2VXIGjyYm1TpcL6m9ji0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "902088477645-lihb9ein7ga52h4c18ft6jvqqpj922k2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
