@@ -5,7 +5,8 @@ import 'package:mspr/core/values/failures.dart';
 import 'package:mspr/modules/authentication/data/authentication_api_provider.dart';
 
 class AuthenticationRepository {
-  AuthenticationRepository({required AuthenticationApiProvider apiProvider}) : _apiProvider = apiProvider;
+  AuthenticationRepository({required AuthenticationApiProvider apiProvider})
+      : _apiProvider = apiProvider;
 
   final AuthenticationApiProvider _apiProvider;
 
@@ -14,9 +15,28 @@ class AuthenticationRepository {
     required String password,
   }) async {
     try {
-      final response = await _apiProvider.checkUser(username: username, password: password);
+      final response =
+          await _apiProvider.checkUser(username: username, password: password);
 
       return Right(response);
+    } catch (e) {
+      if (e is DioError && e.response != null) {
+        final errorResponse = e.response!;
+        final error = UserFailure(message: errorResponse.data['message'] ?? '');
+        return Left(error);
+      } else {
+        return Left(UserFailure(message: e.toString()));
+      }
+    }
+  }
+
+  Future<Either<UserFailure, CustomUser>> checkToken({
+    required String token,
+  }) async {
+    try {
+      final response = await _apiProvider.checkToken(token: token);
+
+      return Right(CustomUser(username: 'username', token: token));
     } catch (e) {
       if (e is DioError && e.response != null) {
         final errorResponse = e.response!;

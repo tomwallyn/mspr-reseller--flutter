@@ -10,6 +10,8 @@ final dioProvider = Provider(
     ),
 );
 
+final dioProviderAuth = Provider((ref) => Dio());
+
 final customInterceptorProvider =
     Provider((ref) => CustomInterceptors(ref: ref));
 

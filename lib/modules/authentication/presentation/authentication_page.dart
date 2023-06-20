@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mspr/core/providers/global_provider_binding.dart';
 import 'package:mspr/core/widgets/loading_indicator_widget.dart';
 import 'package:mspr/core/widgets/loading_widget.dart';
+import 'package:mspr/core/widgets/qr_reader_widget.dart';
 import 'package:mspr/modules/authentication/authentication_binding.dart';
 import 'package:mspr/modules/home/presentation/home_page.dart';
 
@@ -121,6 +122,19 @@ class AuthenticationPage extends HookConsumerWidget {
                                 style: TextStyle(
                                     fontSize: 27, fontWeight: FontWeight.w700),
                               ),
+                              IconButton(
+                                  color: Colors.black38,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              QrReaderWidget()),
+                                    );
+                                  },
+                                  icon: const Icon(
+                                    Icons.qr_code_scanner_sharp,
+                                  )),
                               ref
                                   .watch(authenticationControllerProvider)
                                   .maybeMap(
